@@ -1,1 +1,1 @@
-this is example of terraform and azure
+this is example of terraform and azure 
