@@ -3,26 +3,26 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "example" {
-  name     = "example-resources1"
+  name     = "example-resources3"
   location = "West Europe"
 }
 
 resource "azurerm_virtual_network" "example" {
-  name                = "example-network2"
+  name                = "example-network3"
   address_space       = ["10.0.0.0/16"]
   location            = azurerm_resource_group.example.location
   resource_group_name = azurerm_resource_group.example.name
 }
 
 resource "azurerm_subnet" "example" {
-  name                 = "example-subnet2"
+  name                 = "example-subnet3"
   resource_group_name  = azurerm_resource_group.example.name
   virtual_network_name = azurerm_virtual_network.example.name
   address_prefixes     = ["10.0.2.0/24"]
 }
 
 resource "azurerm_network_interface" "example" {
-  name                = "example-nic2"
+  name                = "example-nic3"
   location            = azurerm_resource_group.example.location
   resource_group_name = azurerm_resource_group.example.name
 
@@ -34,7 +34,7 @@ resource "azurerm_network_interface" "example" {
 }
 
 resource "azurerm_virtual_machine" "example" {
-  name                  = "example-machine2"
+  name                  = "example-machine3"
   location              = azurerm_resource_group.example.location
   resource_group_name   = azurerm_resource_group.example.name
   network_interface_ids = [azurerm_network_interface.example.id]
