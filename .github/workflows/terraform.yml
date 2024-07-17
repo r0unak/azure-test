@@ -26,9 +26,6 @@ jobs:
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-      - name: Terraform destroy
-        run: terraform destroy
-
       - name: Terraform Init
         run: terraform init
 
