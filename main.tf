@@ -7,6 +7,7 @@ provider "azurerm" {
   }
 }
 
+/*
 terraform {
   backend "azurerm" {
     resource_group_name  = "tf-stage-azure-open-ai"
@@ -14,7 +15,7 @@ terraform {
     container_name       = "terraformopenai2024"
     key                  = "terraform.tfstate"
   }
-}
+}*/
 
 resource "azurerm_resource_group" "example" {
   name     = "example-resources5"
